@@ -1,0 +1,76 @@
+<!--
+    I declare that the lab work here submitted is original except for source material explicitly acknowledged, 
+    and that the same or closely related material has not been previously submitted for another course. 
+    I also acknowledge that I am aware of University policy and regulations on honesty in academic work, 
+    and of the disciplinary guidelines and procedures applicable to breaches of such policy and regulations, 
+    as contained in the website. University Guideline on Academic Honesty: https://www.cuhk.edu.hk/policy/academichonesty/ 
+
+    Student Name : YUAN Lin 
+    Student ID : 1155141399 
+    Class/Section : CSCI2720 
+    Date : Dec 14, 2023 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Event</title>
+</head>
+<body>
+<h2>Create Event</h2>
+<form id="createEventForm">
+  <label for="name">Event Name:</label>
+  <input type="text" id="name" name="name" required><br><br>
+
+  <label for="locId">Location ID:</label>
+  <input type="number" id="locId" name="locId" required><br><br>
+
+  <label for="quota">Event Quota:</label>
+  <input type="number" id="quota" name="quota" required><br><br>
+
+  <button type="submit">Create Event</button>
+</form>
+
+<script>
+  document.getElementById('createEventForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    //const olddisplayEle = document.getElementById('displayData');
+    //if(olddisplayEle){
+    //    olddisplayEle.remove();
+    //}
+
+    const formData = {
+      name: document.getElementById('name').value,
+      locId: parseInt(document.getElementById('locId').value, 10),
+      quota: parseInt(document.getElementById('quota').value, 10)
+    };
+
+    fetch('http://localhost:3000/ev', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    })
+    .then(response => response.text())
+    .then(data => {
+      //alert('Event created: ' + data);
+        //const displayElement = document.createElement('pre');
+        //displayElement.id = 'displayData';
+        //displayElement.textContent = data;
+        //document.body.appendChild(displayElement);
+        document.open();
+        document.write(data);
+        document.close();
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+  });
+</script>
+
+</body>
+</html>

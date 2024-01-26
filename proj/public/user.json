@@ -1,0 +1,81 @@
+[{
+  "_id": {
+    "$oid": "6579be83e8277d0e06c0513d"
+  },
+  "name": "admin",
+  "password": "password",
+  "favList": [
+    "3110031",
+    "36310036",
+    "50110015"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6579be83e8277d0e06c0513e"
+  },
+  "name": "user",
+  "password": "password",
+  "favList": [
+    "36310036",
+    "50110015",
+    "3110031"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6579ca30c0ecdd17ea22f2f4"
+  },
+  "name": "1111",
+  "password": "2222",
+  "favList": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657abfbbbd0ed758c72f2814"
+  },
+  "name": "Admin",
+  "password": "1111",
+  "favList": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657ac01abd0ed758c72f2817"
+  },
+  "name": "aaa",
+  "password": "bbbc",
+  "favList": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657ac9f153d94a1ef09ca123"
+  },
+  "name": "111",
+  "password": "222",
+  "favList": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657aced7d4fbe6c929f8ad4e"
+  },
+  "name": "11",
+  "password": "22",
+  "favList": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657ae673f7825a0e458edf55"
+  },
+  "name": "test",
+  "password": "11",
+  "favList": [
+    "3110031",
+    "36310036"
+  ],
+  "__v": 0
+}]

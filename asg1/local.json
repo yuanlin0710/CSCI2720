@@ -1,0 +1,12 @@
+[
+  {
+    "email": "cse@test.com",
+    "color": "red",
+    "comment": "this is a test comment"
+  },
+  {
+    "email": "bio@cuhk.edu.hk",
+    "color": "yellow",
+    "comment": "The discovery is quite a breakthrough!"
+  }
+]

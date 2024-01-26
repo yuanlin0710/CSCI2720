@@ -1,0 +1,57 @@
+{
+  "name": "project",
+  "version": "0.1.0",
+  "homepage": "https://Tom-Liii.github.io/CSCI2720-Project",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "bootstrap": "^5.3.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "leaflet": "^1.9.4",
+    "mongoose": "^8.0.3",
+    "project": "^0.1.6",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.9.1",
+    "react-dom": "^18.2.0",
+    "react-leaflet": "^4.2.1",
+    "react-router-dom": "^6.21.0",
+    "react-scripts": "^5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.0"
+  },
+  "description": "- single location pages - customized feature - backend     - user login / logout / fav     - location and event - report ## Group 17 - Entry point: index.html ## 环境 ```bash # Command to install the modules npm i react-scripts npm i react-router-dom npm i react-leaflet npm i leaflet npm i react npm i react-dom npm i bootstrap # install server-side modules npm install express cors npm install mongoose ``` ```bash # run server node server.js ``` <img width=\"333\" alt=\"image\" src=\"https://github.com/Tom-Liii/CSCI2720-Project/assets/152640066/7267d160-53d8-46e6-8999-2466422ab39b\">",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,90 @@
+[{
+  "_id": {
+    "$oid": "65783f570fc3faa742423512"
+  },
+  "venueId": "3110031",
+  "venue_name": "North District Town Hall (Auditorium)",
+  "latitude": "22.501639",
+  "longitude": "114.128911"
+},
+{
+  "_id": {
+    "$oid": "65783f570fc3faa742423513"
+  },
+  "venueId": "36310036",
+  "venue_name": "Sha Tin Town Hall (Cultural Activities Hall)",
+  "latitude": "22.38136",
+  "longitude": "114.18990"
+},
+{
+  "_id": {
+    "$oid": "65783f570fc3faa742423514"
+  },
+  "venueId": "50110015",
+  "venue_name": "Hong Kong Cultural Centre (Grand Theatre)",
+  "latitude": "22.29386",
+  "longitude": "114.17053"
+},
+{
+  "_id": {
+    "$oid": "65783f570fc3faa742423515"
+  },
+  "venueId": "75010017",
+  "venue_name": "Hong Kong Film Archive (Cinema)",
+  "latitude": "22.285056",
+  "longitude": "114.222075"
+},
+{
+  "_id": {
+    "$oid": "65783f570fc3faa742423516"
+  },
+  "venueId": "76810048",
+  "venue_name": "Tuen Mun Town Hall (Auditorium)",
+  "latitude": "22.391810",
+  "longitude": "113.976771"
+},
+{
+  "_id": {
+    "$oid": "65783f570fc3faa742423517"
+  },
+  "venueId": "87110120",
+  "venue_name": "Kwai Tsing Theatre (Lecture Room)",
+  "latitude": "22.35665",
+  "longitude": "114.12623"
+},
+{
+  "_id": {
+    "$oid": "65783f570fc3faa742423518"
+  },
+  "venueId": "87310051",
+  "venue_name": "Yuen Long Theatre (Auditorium)",
+  "latitude": "22.44152",
+  "longitude": "114.02289"
+},
+{
+  "_id": {
+    "$oid": "65783f570fc3faa742423519"
+  },
+  "venueId": "87410030",
+  "venue_name": "Ngau Chi Wan Civic Centre (Theatre)",
+  "latitude": "22.334583",
+  "longitude": "114.208766"
+},
+{
+  "_id": {
+    "$oid": "65783f570fc3faa74242351a"
+  },
+  "venueId": "87510008",
+  "venue_name": "Hong Kong City Hall (Concert Hall)",
+  "latitude": "22.282279",
+  "longitude": "114.161545"
+},
+{
+  "_id": {
+    "$oid": "65783f570fc3faa74242351b"
+  },
+  "venueId": "87810779",
+  "venue_name": "Sheung Wan Civic Centre (Art Studios (1) & (2))",
+  "latitude": "22.28602",
+  "longitude": "114.14967"
+}]

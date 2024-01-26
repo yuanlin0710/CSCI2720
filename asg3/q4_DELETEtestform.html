@@ -1,0 +1,56 @@
+<!--
+    I declare that the lab work here submitted is original except for source material explicitly acknowledged, 
+    and that the same or closely related material has not been previously submitted for another course. 
+    I also acknowledge that I am aware of University policy and regulations on honesty in academic work, 
+    and of the disciplinary guidelines and procedures applicable to breaches of such policy and regulations, 
+    as contained in the website. University Guideline on Academic Honesty: https://www.cuhk.edu.hk/policy/academichonesty/ 
+
+    Student Name : YUAN Lin 
+    Student ID : 1155141399 
+    Class/Section : CSCI2720 
+    Date : Dec 14, 2023 
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Event</title>
+</head>
+<body>
+
+    <h1>Delete Event</h1>
+    <form id="deleteEventForm">
+        <label for="eventId">Event ID:</label>
+        <input type="number" id="eventId" name="eventId" required>
+        <button type="submit">Delete Event</button>
+    </form>
+
+    <script>
+        document.getElementById('deleteEventForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const eventId = document.getElementById('eventId').value;
+            const url = `http://localhost:3000/ev/${eventId}`;
+            
+            fetch(url, {
+                method: 'DELETE',
+            })
+            .then(response => {
+                if (response.status === 204) {
+                    alert('Event deleted successfully');
+                } else if(response.status === 404) {
+                    alert('Event not found');
+                } else {
+                    alert('An error occurred');
+                }
+                return response.text();
+            })
+            .then(data => console.log(data))
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!--
+    I declare that the lab work here submitted is original except for source material explicitly acknowledged, 
+    and that the same or closely related material has not been previously submitted for another course. 
+    I also acknowledge that I am aware of University policy and regulations on honesty in academic work, 
+    and of the disciplinary guidelines and procedures applicable to breaches of such policy and regulations, 
+    as contained in the website. University Guideline on Academic Honesty: https://www.cuhk.edu.hk/policy/academichonesty/ 
+
+    Student Name : YUAN Lin 
+    Student ID : 1155141399 
+    Class/Section : CSCI2720 
+    Date : Dec 14, 2023 
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Event</title>
+    <style>
+        input[readonly] {
+          background-color: #e9ecef; /* Light grey background */
+          color: #495057; /* Dark grey text */
+          cursor: not-allowed; /* Shows a 'not-allowed' cursor on hover */
+          border: 1px solid #ced4da; /* A subtle border */
+          opacity: 1; /* Override any default styling that reduces opacity */
+        }
+      </style>
+</head>
+<body>
+    <form id="updateEventForm">
+        <label for="eventId">Event ID:</label>
+        <input type="number" id="eventId" name="eventId" required>
+        <button type="button" id="loadButton">Search for Event</button>
+        <br>
+        <label for="eventName">Event Name:</label>
+        <input type="text" id="eventName" name="name">
+        <br>
+        <label for="eventQuota">Event Quota:</label>
+        <input type="number" id="eventQuota" name="quota">
+        <br>
+        <label for="locationId">Location ID:</label>
+        <input type="number" id="locationId" name="loc">
+        <br>
+        <button type="button" id="clearAllButton">Clear All</button>
+        <button type="submit">Update Event</button>
+    </form>
+
+    <script>
+        document.getElementById('loadButton').addEventListener('click', function() {
+            var eventIdInput = document.getElementById('eventId');
+            var eventId = document.getElementById('eventId').value;
+
+            fetch(`http://localhost:3000/ev/${eventId}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Event not found');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    document.getElementById('eventName').value = data.name;
+                    document.getElementById('eventQuota').value = data.quota;
+                    document.getElementById('locationId').value = data.loc.locId;
+                    eventIdInput.readOnly = true; // make the EventID input field read-only
+                })
+                .catch(error => {
+                    alert(error.message);
+                });
+        });
+        
+
+        document.getElementById('clearAllButton').addEventListener('click', function() {
+            document.getElementById('updateEventForm').reset();
+            var eventIdInput = document.getElementById('eventId');
+            eventIdInput.readOnly = false;
+
+            const displayElement = document.getElementById('displayData');
+            if (displayElement) {
+                displayElement.remove();
+            }
+        });
+
+
+
+        document.getElementById('updateEventForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var eventId = document.getElementById('eventId').value;
+
+            const olddisplayEle = document.getElementById('displayData');
+            if(olddisplayEle){
+                olddisplayEle.remove();
+            }
+
+            fetch(`http://localhost:3000/ev/${eventId}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: document.getElementById('eventName').value,
+                    locID: document.getElementById('locationId').value,
+                    quota: document.getElementById('eventQuota').value
+                })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error updating event');
+                }
+                return response.text();
+            })
+            .then(data => {
+            //console.log(data); // print on console log
+            const displayElement = document.createElement('pre');
+            displayElement.id = 'displayData';
+            displayElement.textContent = data;
+            document.body.appendChild(displayElement);
+            })
+            .catch(error => {
+                alert(error.message);
+            });
+        });
+    </script>
+</body>
+</html>

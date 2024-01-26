@@ -1,0 +1,494 @@
+<!-- I declare that the lab work here submitted is original except for source material explicitly acknowledged, 
+    and that the same or closely related material has not been previously submitted for another course. 
+    I also acknowledge that I am aware of University policy and regulations on honesty in academic work, 
+    and of the disciplinary guidelines and procedures applicable to breaches of such policy and regulations, 
+    as contained in the website. University Guideline on Academic Honesty: https://www.cuhk.edu.hk/policy/academichonesty/ 
+    Student Name : YUAN Lin Student ID : 1155141399 Class/Section : CSCI2720 Date : Oct 14, 2023 -->
+
+    <!-- Source materials used for text content preparation
+        the wikipedia page of Svante Paabo: https://en.wikipedia.org/wiki/Svante_P%C3%A4%C3%A4bo
+        the staff page of Svante Paabo at max planck institute: https://www.eva.mpg.de/genetics/staff/paabo/#c28042
+        Nobel Prize webpage: https://www.nobelprize.org/prizes/medicine/2022/press-release/  
+        A news page: https://leakeyfoundation.org/svante-paabo-wins-nobel-prize-ancient-dna/
+    -->
+
+
+    <!-- -->
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- bootstrap & external css-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Sofia" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        
+        <title>An introduction to Svante Paabo</title>
+        <!-- css -->
+        <link rel="stylesheet" href="./asg1.css"/>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+            .news {
+                column-count: 3;
+                column-gap: 40px;
+                column-rule: 4px double #84e4e2;
+            }
+            .changefont2S{
+                font-family: Sofia;
+            }
+            .header{
+                background-image: url("https://theunn.com/wp-content/uploads/2022/10/Featured-Cover-Svante-Paabo-Chosen-For-Nobel-Prize-In-Physics-For-His-Neanderthal-Work-Smithsonian.jpg")
+            }
+
+            
+        </style>
+
+
+        <script src="asg1_script.js"></script>
+
+    </head>
+    
+
+
+    <body>
+        <!-- nav bar -->
+          <nav id = navigation class="navbar navbar-expand-lg navbar-light" style="background-color: #84e4e2;">
+            <a class="navbar-brand">  Menu</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link" href="#intro">Intro</a>
+                <a class="nav-item nav-link" href="#affiliation">Affiliation</a>
+                <a class="nav-item nav-link" href="#spotlight">Spotlight</a>
+                <a class="nav-item nav-link" href="#award">Awards and Honors</a>
+                <a class="nav-item nav-link" href="#biography">Biography Highlights</a>
+                <a class="nav-item nav-link" href="#research">Research</a>
+                <a class="nav-item nav-link" href="#news">News</a>
+                <a class="nav-item nav-link" href="#comment">Comment</a>
+                <button type="button" id= hideshowbutton class="btn btn-primary" style="background-color: #1f9eba;" onclick="hideshow()">Show</button>
+              </div>
+            </div>    
+
+          </nav>
+
+
+
+          <nav id = extrabar class="navbar navbar-expand-lg navbar-light" style="background-color: #84c3e3; display: none;">
+            <div class="navbar-nav">
+            <button type="button" class="btn btn-primary" style="background-color: #9892bb;" onclick="task1()">Task1</button>
+            <button type="button" class="btn btn-primary" style="background-color: #7c87e5;" onclick="task2()">Task2</button>
+            <button type="button" class="btn btn-primary" style="background-color: #616fda;"onclick="task3()">Task3</button>
+            </div>
+            <!-- <div class="text-start" id="task1column">Task1: Align</div> -->
+            <div class="row text-start" id="task1column">
+                <div class="col-4">Task1: Align</div>
+                <div class="col-4">Click the button to</div>
+                <div class="col-4">change alignment mode here</div>
+            </div>
+           <!-- 
+            <div class="progress" id ="test" style = "display: none">
+                <div class="progress-bar" id="task3progressbar" role="progressbar" aria-label="withlabel" style="width: 0%; display: none; " aria-valuemin="0" aria-valuemax="100">0%</div>
+            </div>
+        -->
+            </nav>
+
+            <section class="progress-container sticky-top" id ="progresscontainer" style = "display: none">
+                <div class="progress-bar" id="task3progressbar" style="width: 0%; display: none; ">0%</div>
+            </section>
+
+        
+
+
+
+
+        <div class="container-expand-lg">
+            <header class="header" id="home">
+              <h2>Svante Paabo - The 2022 Nobel Prize Laureate in Physiology or Medicine</h1>
+              <div class="social">
+                <a href="https://www.eva.mpg.de/genetics/staff/paabo/"><i class="fas fa-id-card"></i></a>
+                <a href="https://scholar.google.com/citations?user=_Urs-74AAAAJ"><i class="fas fa-file"></i></a>
+                <a href="https://en.wikipedia.org/wiki/Svante_P%C3%A4%C3%A4bo"><i class="fab fa-wikipedia-w"></i></a>
+                <a href="https://www.eva.mpg.de/fileadmin/content_files/staff/paabo/pdf/CV_Paabo_240823.pdf"><i class="fas fa-paperclip"></i></a>
+              </div>
+            </header>
+
+
+            <aside class="left">
+              <img class='scaled-image' src="https://ts1.cn.mm.bing.net/th/id/R-C.085610fe3dfecfe3ddfcc825582bce04?rik=o%2bsKubqEPx1TWQ&pid=ImgRaw&r=0"
+                alt="Photo of Svante Paabo" width="160px">
+              <ul>
+                <li><a class="active" href="#home">Home</a></li>
+                <li><a href="#intro">Intro</a></li>
+                <li><a href="#affiliation">Affiliation</a></li>
+                <li><a href="#spotlight">Spotlight</a></li>
+                <li><a href="#award">Awards and Honors</a></li>
+                <li><a href="#biography">Biography Highlights</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#comment">Comment</a></li>
+              </ul>
+              <br><br>
+              <p>"From a genomic perspective, we are all Africans."<br>- Svante Paabo</p>
+            </aside>
+
+
+            <main class="content">
+                <section id="intro">
+                    <h2>Who is Svante Paabo?</h2>
+                    <img class='scaled-image' src="https://www.eva.mpg.de/fileadmin/content_files/staff/paabo/images/SvantePaabo.jpg" style = "float: right; margin-left: 10px;"
+                         alt="Another Photo of Svante Paabo"><p>Svante Paabo is a Swedish geneticist and Nobel Laureate who specialises in the field of evolutionary 
+                        genetics. <br>
+                        As one of the founders of paleogenetics, he has worked extensively on the Neanderthal genome.
+                        In 1997, he became founding director of the Department of Genetics at the Max Planck Institute for 
+                        Evolutionary Anthropology in Leipzig, Germany. Since 1999, he has been an honorary professor 
+                        at Leipzig University; he currently teaches molecular evolutionary biology at the university. 
+                    </p>
+                </section>
+
+                <section id="nobelprize">
+                    <h3>What won him a Nobel Prize?</h2>
+                    <p>The Nobel Prize in Physiology or Medicine 2022 was awarded to Svante Paabo 
+                        "for his discoveries concerning the genomes of extinct hominins and human evolution".</p>
+                    <a href="https://www.nobelprize.org/prizes/medicine/2022/summary/" target="_blank">Check the Nobel Prize announcement here.</a>
+                    <br><br>
+
+                </section>
+            
+
+
+                <section id="affiliation">
+                    <h2>Affiliation</h2>
+                 <table>
+                     <tr>
+                         <th>Degree/Position</th>
+                         <th>Institution</th>
+                         <th>Year</th>
+                     </tr>
+
+                     <tr>
+                         <td>B.Sc. and Ph.D.</td>
+                         <td>Uppsala University, Sweden</td>
+                         <td>1975-1986</td>
+                     </tr>
+
+                     <tr>
+                         <td>Postdoctoral</td>
+                         <td>University of Zurich, Switzerland</td>
+                         <td>1986-1987</td>
+                     </tr>
+                     <tr>
+                        <td>Postdoctoral</td>
+                        <td>University of California at Berkeley, United States of America</td>
+                        <td>1987-1990</td>
+                    </tr>
+                    <tr>
+                        <td>Full Professor</td>
+                        <td>University of Munich, Germany</td>
+                        <td>1990-1998</td>
+                    </tr>
+                    <tr>
+                        <td>Director</td>
+                        <td>Max Planck Institute for Evolutionary Anthropology Leipzig, Germany</td>
+                        <td>1997-</td>
+                    </tr>
+                    <tr>
+                        <td>Professor</td>
+                        <td>University of Leipzig, Germany</td>
+                        <td>1999-</td>
+                    </tr>
+                    <tr>
+                        <td>Guest Professor</td>
+                        <td>University of Uppsala, Sweden</td>
+                        <td>2003-2015</td>
+                    </tr>
+                    <tr>
+                        <td>Honorary Research Fellow</td>
+                        <td>Natural History Museum London, United Kingdom</td>
+                        <td>2016-</td>
+                    </tr>
+                    <tr>
+                        <td>Adjunct Professor</td>
+                        <td>Okinawa Institute of Science and Technology, Japan</td>
+                        <td>2020-</td>
+                    </tr>
+                 </table>
+              </section>
+
+              <section id="spotlight">
+                <h2>Spotlight</h2>
+                <p>Click button "Task2" to add spotlight here.</p>
+
+              </section>
+
+
+
+
+                <section id="award">
+                    <hr><br>
+                    <h2>Awards and Honors</h2>
+                    <table>
+                        <tr>
+                        <th>Year</th>
+                        <th>Award/Honor Name</th>
+                        </tr>
+
+                        <tr>
+                        <td>1992</td>
+                        <td>Gottfried Wilhelm Leibniz Prize</td>
+                        </tr>
+
+                        <tr>
+                            <td>2000</td>
+                            <td>Member of the Royal Swedish Academy of Sciences</td>
+                        </tr>
+
+                        <tr>
+                            <td>2004</td>
+                            <td>Member of the National Academy of Sciences</td>
+                        </tr>
+
+                        <tr>
+                            <td>2005</td>
+                            <td>Louis-Jeantet Prize for Medicine</td>
+                        </tr>
+
+                        <tr>
+                            <td>2008</td>
+                            <td>Golden Plate Award of the American Academy of Achievement</td>
+                        </tr>
+
+                        <tr>
+                            <td>2009</td>
+                            <td>Kistler Prize</td>
+                        </tr>
+
+                        <tr>
+                            <td>2010</td>
+                            <td>Theodor Bucher Medal for outstanding achievements in Biochemistry and Molecular Biology</td>
+                        </tr>
+
+                        <tr>
+                            <td>2013</td>
+                            <td>Gruber Prize in Genetics</td>
+                        </tr>
+
+                        <tr>
+                            <td>2016</td>
+                            <td>Foreign Member of the Royal Society</td>
+                        </tr>
+
+                        <tr>
+                            <td>2017</td>
+                            <td>Dan David Prize</td>
+                        </tr>
+
+                        <tr>
+                            <td>2018</td>
+                            <td>Princess of Asturias Awards</td>
+                        </tr>
+
+                        <tr>
+                            <td>2020</td>
+                            <td>Japan Prize</td>
+                        </tr>
+
+                        <tr>
+                            <td>2021</td>
+                            <td>Massry Prize</td>
+                        </tr>
+
+                        <tr>
+                            <td>2022</td>
+                            <td>Nobel Prize in Physiology or Medicine</td>
+                        </tr>
+
+
+                    </table>
+
+                </section>
+              
+
+
+    
+
+
+
+
+                <section id="biography">
+                    <h2>Biography Highlights</h2>
+            
+                    <h3>Early Life</h3>
+                    <p>
+                        Paabo was born in Stockholm, Sweden, in 1955 and grew up there with his mother, Estonian chemist Karin Paabo, 
+                        who had escaped from the Soviet invasion in 1944 and arrived in Sweden as a refugee during World War II.
+                        He was born through a extramarital affair of his father, Swedish biochemist Sune Bergstrom (1916-2004), who, like his son, 
+                        became a recipient of the Nobel Prize in Physiology or Medicine (in 1982). 
+                        <br>
+                        Paabo grew up as a native Swedish speaker. In a 2012 interview with the Estonian newspaper Eesti Päevaleht, 
+                        he said that he self-identifies as a Swede, but has a "special relationship with Estonia".
+
+
+                    </p>
+            
+                    <h3>Education</h3>
+                    <p> In 1975, Paabo began studying at Uppsala University, serving one year in the Swedish Defense Forces 
+                        attached to the School of Interpreters. Paabo earned his Ph.D. from Uppsala University in 1986 for 
+                        research investigating how the E19 protein of adenoviruses modulates the immune system.
+                    </p>
+            
+                    <h3>Paabo and Neanderthal</h3>
+                    <p>
+                        In May 2010, Paabo and his colleagues published a draft sequence of the Neanderthal genome 
+                        in the journal Science. He and his team also concluded that there was probably interbreeding 
+                        between Neanderthals and Eurasian (but not Sub-Saharan African) humans. There is general 
+                        mainstream support in the scientific community for this theory of interbreeding between 
+                        archaic and modern humans. This admixture of modern human and Neanderthal genes is estimated 
+                        to have occurred roughly between 50,000 and 60,000 years ago, in the Middle East.
+                        <br>
+                        In 2014, he published the book Neanderthal Man: In Search of Lost Genomes where he, in the mixed 
+                        form of a memoir and popular science, tells the story of the research effort to map the 
+                        Neanderthal genome combined with his thoughts on human evolution.
+                        <br>
+                        <br>
+                    </p>
+                </section>
+
+
+
+                <section id="research">
+                    <h2>Research</h2>
+                    <p>Humanity has always been intrigued by its origins. Where do we come from, 
+                        and how are we related to those who came before us? What makes us, Homo sapiens, different from other hominins?
+                        <br>
+
+                        Through his pioneering research, Svante Paabo accomplished something seemingly impossible: 
+                        sequencing the genome of the Neanderthal, an extinct relative of present-day humans. 
+                        He also made the sensational discovery of a previously unknown hominin, Denisova. 
+                        Importantly, Paabo also found that gene transfer had occurred from these now extinct hominins 
+                        to Homo sapiens following the migration out of Africa around 70,000 years ago. This ancient 
+                        flow of genes to present-day humans has physiological relevance today, for example affecting 
+                        how our immune system reacts to infections.
+                        <br>
+                        
+                        Paabo's seminal research gave rise to an entirely new scientific discipline; paleogenomics. 
+                        By revealing genetic differences that distinguish all living humans from extinct hominins, 
+                        his discoveries provide the basis for exploring what makes us uniquely human.</p>
+                </section>
+
+
+
+
+        
+                <section id="news" style="background-color: #aadce5">
+                    <div class="news">
+                    <h2 style="color: #000000">News</h2>
+                    <p class="changefont2S" style="color: rgb(0, 31, 110)">The 2022 Nobel Prize in Physiology or Medicine was awarded on October 3 to geneticist Svante Paabo for his groundbreaking discoveries about human evolution and the genomes of extinct hominins.
+        
+                        Dr. Paabo is director of the Max Planck Institute for Evolutionary Anthropology in Leipzig, Germany. His decades of research made it possible to extract 
+                        and sequence a complete Neanderthal genome from bone fragments that were more than 40,000 years old, a task described by the Nobel Committee as “seemingly 
+                        impossible.” Paabo also made the sensational discovery of a previously unknown hominin group, the Denisovans. Importantly, Paabo found that gene transfer 
+                        had occurred from both of these extinct hominin groups to Homo sapiens following the migration out of Africa. This ancient flow of genes to present-day 
+                        humans has physiological relevance today, for example affecting how our immune system reacts to infections.
+                        
+                        Paabo’s foundational research gave rise to an entirely new scientific discipline; paleogenomics. By revealing genetic differences that distinguish all 
+                        living humans from extinct hominins, his discoveries provide a method for exploring what makes us uniquely human.
+                        
+                        “Paleogenomics has changed the study of human origins, because it allows us to look directly at the genome to infer relationships and assess population 
+                        history,” said Anne Stone, Regents’ Professor in the School of Human Evolution and Social Change at Arizona State University and member of The Leakey 
+                        Foundation’s Scientific Executive Committee.
+                        
+                        Fossils and morphology tell very important parts of the story of human evolution, but paleogenomic techniques have given scientists a new way to address 
+                        important questions about humanity’s origins, including where we came from, why some species went extinct, and what makes us uniquely human.
+                        
+                        Stone said, “The genomic analyses of archaic humans allowed Svante Paabo and his collaborators to unexpectedly discover ‘Denisovans’ and reveal the 
+                        complexity of interactions among populations in the Pleistocene. This work also allows us to examine the bits of archaic ancestry that are found in our 
+                        genomes today. Svante has been at the forefront of ancient DNA research since the beginning and his lab really pushed the field forward both in terms 
+                        of methodological development and the questions that he has asked. This prize is a terrific honor that is richly deserved.”</p>
+                </section>
+        
+                <section id="comment">
+                    <h2>Comment</h2>
+                    <div class="row">
+                    <div class="col-sm-4 col-md-8 col-lg-12 col-xl-12"> Leave your comments below~ What do you think of Paabo's research?</div>
+                  </div>
+
+            
+
+                  <div class="container m-5">
+                    <div id="comments"> 
+                      <div class="d-flex"> <!-- flex layout -->
+                        <div class="flex-shrink-0"> <!-- disallow div to shrink when page gets smaller -->
+                          <svg height="100" width="100">
+                            <circle cx="50" cy="50" r="40" fill="green">
+                          </svg>
+                        </div>
+                        <div class="flex-grow-1"> <!-- allow div to grow and take up all space -->
+                          <h5>lynn@cuhk.edu.hk</h5>
+                          <p>Interesting research, great researcher!</p>
+                        </div>
+                      </div>
+                    </div>
+                    <hr>
+                    <h6>Add your comment:</h6>
+                    <form>
+                    <div class="mb-3">
+                      <label for="new-email" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="new-email" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="new-comment" class="form-label">Comment</label>
+                      <textarea class="form-control" id="new-comment" rows="3" required></textarea>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="new-color" id="new-color-red" value="red">
+                        <label class="form-check-label" for="new-color-red">Red</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="new-color" id="new-color-green" value="green">
+                        <label class="form-check-label" for="new-color-green">Green</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="new-color" id="new-color-yellow" value="yellow">
+                        <label class="form-check-label" for="new-color-yellow">Yellow</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="new-color" id="new-color-blue" value="blue">
+                        <label class="form-check-label" for="new-color-blue">Blue</label>
+                    </div>
+                    <button type="button" class="btn btn-primary" style="background-color: #616fda;" onclick="processtheform()">Add comment</button>
+                    </form>
+                  </div>
+                  
+                </section>
+
+
+
+
+            </main>
+
+
+
+
+            <footer class="footer">CSCI2720 Assignment1 1155141399</footer>
+        </div>
+
+
+        
+
+    
+    
+    </body>
+    
+    </html>

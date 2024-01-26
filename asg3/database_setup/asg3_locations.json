@@ -1,0 +1,33 @@
+[{
+  "_id": {
+    "$oid": "6578a2d66e1f10733541d11f"
+  },
+  "locId": 1,
+  "name": "location1",
+  "quota": 20
+},
+{
+  "_id": {
+    "$oid": "6578a2d66e1f10733541d120"
+  },
+  "locId": 123,
+  "name": "location2",
+  "quota": 30
+},
+{
+  "_id": {
+    "$oid": "6578a2d66e1f10733541d121"
+  },
+  "locId": 124,
+  "name": "location3",
+  "quota": 50
+},
+{
+  "_id": {
+    "$oid": "6578a2e0a314e0453d18e811"
+  },
+  "locId": 2,
+  "name": "test location",
+  "quota": 999,
+  "__v": 0
+}]
