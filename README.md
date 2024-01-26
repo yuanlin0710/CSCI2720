@@ -1,2 +1,2 @@
-# CSCI2720
-Building Web Applications
+# WebApp
+Code Archive of "Building Web Applications"
